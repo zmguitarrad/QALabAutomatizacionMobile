@@ -12,22 +12,22 @@ public class ProductoStepsDefs {
     ProductSteps productSteps;
 
     @Given("estoy en la aplicación de SauceLabs")
-    public void estoy_en_la_aplicación_de_sauce_labs() {
-
+    public void estoyEnLaAplicacionDeSauceLabs() {
     }
-    @And("valido que carguen correctamente los productos en la galeria")
+
+    @And("valido que carguen correctamente los productos en la galería")
     public void validoQueCarguenCorrectamenteLosProductosEnLaGaleria() {
-        productSteps.validateText();
+        productSteps.verificateApp();
     }
 
-    @When("agrego unidad {string} del siguiente producto {string}")
-    public void agregoUnidadUNIDADESDelSiguienteProductoPRODUCTO(String cant, String productName) {
-        productSteps.addProduct(cant,productName);
+    @When("agrego {} del siguiente producto {string}")
+    public void agregoDelSiguienteProducto(String cant, String prod) {
+        productSteps.addBuy(cant,prod);
     }
-    @Then("valido el carrito de compra actualice correctamente")
-    public void valido_el_carrito_de_compra_actualice_correctamente() {
-        productSteps.validateShoppingCart();
+    @Then("valido que el carrito de compras actualice correctamente")
+    public void validoQueElCarritoDeComprasActualiceCorrectamente() {
+        productSteps.clickProductAdd();
+    }
 
-    }
 
 }
